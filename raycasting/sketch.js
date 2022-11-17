@@ -14,18 +14,27 @@ function setup()
 
     list_walls();
 
-    player = new Player(width/4, height/2, 1, walls);
+    player = new Player(width/4, height/2, 100, walls);
     walls.push(new Wall(0, 0, width/2, 0));
     walls.push(new Wall(0, height, width/2, height));
     walls.push(new Wall(width/2, 0, width/2, height));
 
     walls.push(new Wall(100, 200, 200, 200));
     walls[3].setColor(255, 0, 0);
+    walls[3].setHeight(0.5);
+
+    walls.push(new Wall(200, 200, 300, 399));
+    walls[4].setColor(255, 127, 0);
+    walls[4].setHeight(0.75);
+
+    walls.push(new Wall(100, 100, 100, 200));
+    walls[5].setColor(255, 127, 127);
+    walls[5].setHeight(1);
 
     walls.push(new Wall(0, 0, 0, height));
     // rays.push(new Ray(0));
 
-    renderer = new Renderer();
+    renderer = new Renderer(235, 200, 100);
 }
 
 function draw()
@@ -36,12 +45,12 @@ function draw()
     player.show();
     // console.log(player.angle);
 
+    renderer.update(view);
+    renderer.render();
+
     stroke(255);
     strokeWeight(2);
     line(width/2, 0, width/2, height)
-
-    renderer.update(view);
-    renderer.render();
 }
 
 function grid(space)

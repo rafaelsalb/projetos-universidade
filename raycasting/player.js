@@ -6,7 +6,7 @@ class Player
         this.pos = new p5.Vector(x, y);
         this.rays = [];
         for (let i = 0; i < fov; ++i) {
-            this.rays.push(new Ray(i - fov/2));
+            this.rays.push(new Ray(i - fov/2, i));
         }
         this.angle = 0;
         this.speed = 5;
@@ -38,7 +38,7 @@ class Player
                     view.push(pt.z);
                 }
                 else {
-                    view.push([-1, -1]);
+                    view.push({dist: -1});
                 }
             }
         }
