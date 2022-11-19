@@ -14,7 +14,7 @@ class Renderer {
         rectMode(CORNER);
         fill(this.floor.r, this.floor.g, this.floor.b);
         rect(width/2, height/2, width/2, height/2);
-        fill(255);
+        fill(200);
         rect(width/2, 0, width/2, height/2);
 
         for (let i = 0; i < this.objects.length; ++i) {
