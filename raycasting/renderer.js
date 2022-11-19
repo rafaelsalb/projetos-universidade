@@ -31,7 +31,7 @@ class Renderer {
                 noStroke();
                 rectMode(CENTER);
                 let color = this.objects[i].color;
-                fill(2 * color.r / h, 2 * color.g / h, 2 * color.b / h);
+                fill(color.r, color.g, color.b);
                 let visibleH = height/h;
                 let offset = 0;
                 if (curr.height != 1) {
