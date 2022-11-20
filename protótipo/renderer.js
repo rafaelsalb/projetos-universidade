@@ -9,7 +9,8 @@ class Renderer {
         }
         this.horizon = height/2;
         this.screenStart = width/2;
-        this.wallSize = 5000;
+        this.wallSize = 200;
+        this.maxDist = sqrt(width*width + height*height);
     }
 
     render() {
@@ -27,21 +28,27 @@ class Renderer {
             if (distance != -1) {
                 let curr = this.objects[i];
                 let color = curr.color;
+                let brightness = (this.maxDist - curr.dist) / this.maxDist;
 
-                let projected_half_size = curr.height / (2 * curr.dist);
+                let projected_size = curr.height / curr.dist;
+                let offset = this.wallSize / this.wallSize - curr.height;
 
-                let y0 = this.horizon + projected_half_size;
-                let y1 = y0 - 2*projected_half_size*this.wallSize;
+                this.y0 = this.horizon + (this.wallSize * projected_size/2);
+                this.y1 = this.y0 - this.wallSize * projected_size;//y0 + projected_half_size*this.wallSize;
                 
-                //if (i == 50) {
-                //    console.log(y0, y1);
-                //    stroke(0, 0, 255);
-                //}
-                //else {
-                    stroke(color.r, color.g, color.b);
-                //}
+                //console.log(this.y1 - this.y0);
 
-                line(4 * curr.idx + this.screenStart, y0, 4 * curr.idx + this.screenStart, y1);
+                // if (i == 50) {
+                //     //console.log(projected_size, offset, y0, y1, curr.dist, abs(y1 - y0));
+                //     stroke(0, 0, 255);
+                // }
+                // else if (i == 51) {
+                //     //console.log(projected_size, offset, y0, y1, curr.dist, abs(y1 - y0))
+                //     stroke(0, 255, 0);
+                // }
+                stroke(color.r * brightness, color.g * brightness, color.b * brightness);
+
+                line(4 * curr.idx + this.screenStart, this.y0, 4 * curr.idx + this.screenStart, this.y1);
             }
         }
 
@@ -62,6 +69,11 @@ class Renderer {
         else {
             return 0;
         }
+    }
+
+    getObjects() {
+        console.log(this.y1 - this.y0);
+        return this.objects;
     }
 
 }

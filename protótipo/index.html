@@ -8,14 +8,17 @@
         <script src="wall.js"></script>
         <script src="list_walls.js"></script>
         <script src="renderer.js"></script>
+        <script src="editor.js"></script>
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
         <div class="center">
-            <h1 class="center">Raycasting</h1>
+            <h1>SketchRoom</h1>
             <div class="canvas" id="canvas"></div> <br>
             <input class="" type="button" id="toggle_fov" value="Toggle FOV" onclick="toggle_fov()">
-            <div class="center">Add a wall:</div>
+            <br> <br>
+            <!-- <div>Adicionar um objeto ou uma parede:</div>
+            <p>Por coordenadas (como um plano cartesiano)</p> -->
             <input class="" type="text" id="x1" placeholder="X1: ">
             <input class="" type="text" id="y1" placeholder="Y1: ">
             <input class="" type="text" id="x2" placeholder="X2: ">
@@ -24,10 +27,9 @@
             <input class="" type="text" id="g" placeholder="G: ">
             <input class="" type="text" id="b" placeholder="B: ">
             <input class="" type="text" id="h" placeholder="Height: ">
-            <input class="" type="button" id="add_wall" value="Add" onclick="add_wall()">
-            <br> <br>
-            <div class="center" id="list_of_walls">Walls: </div>
+            <input class="" type="button" id="add_wall_c" value="Adicionar" onclick="add_wall()">
+            <br>
+            <div class="list_of_walls" id="list_of_walls">Paredes: </div>
         </div>
     </body>
-
 </html>

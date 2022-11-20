@@ -1,15 +1,10 @@
 body {
-    background-color: black;
-}
-
-.center {
-    color: azure;
-    margin: auto;
+    background-color: antiquewhite;
 }
 
 .canvas {
     margin: auto;
-    width: 85%;
+    width: 800px;
     border: 1px solid rgb(255, 255, 255);
     padding: 10px;
 }
