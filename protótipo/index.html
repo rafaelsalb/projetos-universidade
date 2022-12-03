@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
         <script src="sketch.js"></script>
         <script src="player.js"></script>
         <script src="rays.js"></script>
@@ -11,24 +11,58 @@
         <script src="editor.js"></script>
         <link href="style.css" rel="stylesheet">
     </head>
+
     <body>
+        <div class="header">
+            <table>
+                <tr>
+                    <td>
+                        <h1>SketchRoom</h1>
+                    </td>
+                    <td>
+                        <a></a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <h3>Buscar designs</h3>
+                    </td>
+                    <td>
+                        <h3>Seus designs</h3>
+                    </td>
+                    <td>
+                        <h3>Login</a>
+                    </td>
+                    <td>
+                        <h3>Registrar-se</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <br>
+        <div class="canvas" id="canvas"></div> <br>
+        <!-- <div>Adicionar um objeto ou uma parede:</div>
+        <p>Por coordenadas (como um plano cartesiano)</p> -->
         <div class="center">
-            <h1>SketchRoom</h1>
-            <div class="canvas" id="canvas"></div> <br>
-            <input class="" type="button" id="toggle_fov" value="Toggle FOV" onclick="toggle_fov()">
-            <br> <br>
-            <!-- <div>Adicionar um objeto ou uma parede:</div>
-            <p>Por coordenadas (como um plano cartesiano)</p> -->
-            <input class="" type="text" id="x1" placeholder="X1: ">
-            <input class="" type="text" id="y1" placeholder="Y1: ">
-            <input class="" type="text" id="x2" placeholder="X2: ">
-            <input class="" type="text" id="y2" placeholder="Y2: ">
-            <input class="" type="text" id="r" placeholder="R: ">
-            <input class="" type="text" id="g" placeholder="G: ">
-            <input class="" type="text" id="b" placeholder="B: ">
-            <input class="" type="text" id="h" placeholder="Height: ">
-            <input class="" type="button" id="add_wall_c" value="Adicionar" onclick="add_wall()">
+            <input class="" type="button" id="toggle_fov" value="Ver CDV" onclick="toggle_fov()">
+            <a> Clique na área preta para adicionar uma parede. WASD para mover-se.</a>
+            <br><br>
+            <a>Adicionar uma parede: </a>
             <br>
+            <input class="text_input" type="text" id="x1" placeholder="X1: ">
+            <input class="text_input" type="text" id="y1" placeholder="Y1: ">
+            <input class="text_input" type="text" id="x2" placeholder="X2: ">
+            <input class="text_input" type="text" id="y2" placeholder="Y2: ">
+            <input class="text_input" type="text" id="r" placeholder="R: ">
+            <input class="text_input" type="text" id="g" placeholder="G: ">
+            <input class="text_input" type="text" id="b" placeholder="B: ">
+            <input class="text_input" type="text" id="h" placeholder="Height: ">
+            <input class="" type="button" id="add_wall_c" value="Adicionar" onclick="add_wall()">
+            <br><br>
+            <a>Paredes: (altere as propriedades e clique em "Atualizar")</a>
             <div class="list_of_walls" id="list_of_walls">Paredes: </div>
         </div>
     </body>
